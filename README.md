@@ -34,8 +34,8 @@ Runs the app locally
               ├── store
               ├── styles
               ├── types
-              ├── styles (This folder has general styles of the app and common colors and typos as json files)
-              └── utils (This folder has helper methods in order to avoid code complexity other parts of the app)
+              ├── styles
+              └── utils 
 
 
 - src/components
