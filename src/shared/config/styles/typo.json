@@ -1,0 +1,12 @@
+{
+  "text": {
+    "family": "Roboto",
+    "size": 14,
+    "weight": 400
+  },
+  "title": {
+    "family": "Roboto",
+    "size": 22,
+    "weight": 500
+  }
+}

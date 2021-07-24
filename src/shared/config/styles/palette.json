@@ -1,0 +1,17 @@
+{
+  "white": "#FFFFFF",
+  "background": "#F6F7F8",
+  "gray": "#ABAEB9",
+  "gray2": "#4D5664",
+  "purple": "#A9679A",
+  "activeMenu": "#233456",
+  "border": "#E7E3E3",
+  "innerBorder": "#ECE9E9",
+  "tableBackground": "#FAFBFB",
+  "cellText": "#403B5A",
+  "inactiveCellText": "#8A898B",
+  "green": "#49CC99",
+  "searchBackground": "#EBECEE",
+  "searchColor": "#9B9B9B",
+  "sideMenuBorder": "#151D33"
+}
