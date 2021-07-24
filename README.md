@@ -4,7 +4,7 @@ This project was bootstrapped with CRA with typescript template.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/af01f9cc-adf7-480f-ad17-015c1e95fc98/deploy-status)](https://app.netlify.com/sites/inventorum/deploys)
 
-You can try Inventorum App [here](https://inventorum.netlify.app/contacts)
+You can try Inventorum App [here](https://inventorum.netlify.app)
 
 ## Installation
 
