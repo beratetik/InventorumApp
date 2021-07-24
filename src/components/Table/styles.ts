@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Text } from '../../shared/components'
 
 import { palette } from '../../shared/config/styles'
 
@@ -23,4 +24,12 @@ export const TableInnerWrapper = styled.div`
 export const Loading = styled.div`
   margin: auto;
   color: ${palette.gray2};
+`
+
+export const TableTitle = styled(Text)`
+  color: ${palette.searchColor};
+  padding: 8px  18px;
+  background-color: ${palette.tableBackground};
+  border-bottom: 1px solid ${palette.border};
+  display: flex;
 `

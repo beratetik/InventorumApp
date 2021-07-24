@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react'
 
 import { UserType } from '../../shared/types/UserType'
-import { searchFilter } from '../../shared/utils'
+import { searchFilter, splitTableItems } from '../../shared/utils'
 
 import { Row, SearchBox } from './components'
 import {
   TableContainer,
   TableWrapper,
   TableInnerWrapper,
+  TableTitle,
   Loading
 } from './styles'
-
-
 interface Props {
   data: UserType[],
   rawData?: UserType[],
@@ -24,9 +23,23 @@ const TableBody: React.FC<Props> = ({ rawData, data }) => {
     return <Loading>{text}</Loading>
   }
 
+  const initialValue: { activeUsers: UserType[], inActiveUsers: UserType[] } = {
+    activeUsers: [],
+    inActiveUsers: []
+  }
+  const { activeUsers, inActiveUsers } = splitTableItems<UserType>(data, initialValue, "isActive")
+
   return (
     <TableInnerWrapper>
-      {data.map(item => <Row key={item.id} user={item} />)}
+      {activeUsers.map(item => <Row key={item.id} user={item} />)}
+      <div>
+        <TableTitle
+          value='Inactive User'
+          size={12}
+          height={15}
+        />
+        {inActiveUsers.map(item => <Row key={item.id} user={item} />)}
+      </div>
     </TableInnerWrapper>
   )
 }
