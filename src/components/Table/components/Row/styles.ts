@@ -62,7 +62,7 @@ export const ImageWrapper = styled.div<{ isActive?: boolean }>`
 export const Image = styled.img<{ isActive?: boolean }>`
   width: 36px;
   border-radius: 50%;
-  filter: grayscale(${({ isActive }) => isActive ? 0 : '100%'});
+  filter: grayscale(${({ isActive }) => isActive ? 0 : '100%Z'});
 `
 
 export const CellText = styled(Text) <{ isActive?: boolean }>`
