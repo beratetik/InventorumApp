@@ -5,7 +5,7 @@ import departments from './departments.json'
 import genders from './genders.json'
 
 const fillUserData = (user: UserType) => {
-  user.department = pickRandom(departments)
+  user.department = pickRandom(Object.entries(departments))
   user.isActive = Math.random() < 0.5
   user.gender = pickRandom(genders)
   user.phoneNo = '0905469542894'

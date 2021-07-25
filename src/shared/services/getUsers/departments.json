@@ -1,6 +1,6 @@
-[
-  "Marketing",
-  "Sales",
-  "IT",
-  "Support"
-]
+{
+  "marketing": "Marketing",
+  "sales": "Sales",
+  "it": "IT",
+  "support": "Support"
+}

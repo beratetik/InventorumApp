@@ -15,9 +15,11 @@ const FormInputTypes: InputListType = {
   "number": InputNumber
 }
 
-const FormInput: React.FC<FormInputType> = ({ type, label = "", ...rest }) => {
+const FormInput: React.FC<FormInputType> = ({ type, label = "", onChange = () => { }, ...rest }) => {
   const Component = FormInputTypes[type]
-  return <Component  {...{ type, label, ...rest }} />
+  const onChangeHandler = React.useCallback(onChange, [])
+
+  return <Component  {...{ type, label, onChange, ...rest }} onChange={onChangeHandler} />
 }
 
 export default React.memo(FormInput)

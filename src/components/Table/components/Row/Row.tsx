@@ -45,7 +45,7 @@ const Row: React.FC<Props> = ({ user }) => {
         isActive={user.isActive}
         value={`${user.first_name} ${user.last_name}`}
       />
-      <Cell isActive={user.isActive} value={user.department} />
+      <Cell isActive={user.isActive} value={user.department[1]} />
       <Cell isActive={user.isActive} value={user.email} />
       <Cell isActive={user.isActive} value={`${user.contribution} €`} />
     </RowWrapper>

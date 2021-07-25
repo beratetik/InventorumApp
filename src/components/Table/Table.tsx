@@ -32,14 +32,12 @@ const TableBody: React.FC<Props> = ({ rawData, data }) => {
   return (
     <TableInnerWrapper>
       {activeUsers.map(item => <Row key={item.id} user={item} />)}
-      <div>
-        <TableTitle
-          value='Inactive User'
-          size={12}
-          height={15}
-        />
-        {inActiveUsers.map(item => <Row key={item.id} user={item} />)}
-      </div>
+      <TableTitle
+        value='Inactive User'
+        size={12}
+        height={15}
+      />
+      {inActiveUsers.map(item => <Row key={item.id} user={item} />)}
     </TableInnerWrapper>
   )
 }

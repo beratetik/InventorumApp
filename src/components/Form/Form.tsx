@@ -21,16 +21,22 @@ type MultipleFieldProps = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
+const getValue = (data: any, field: any) => {
+  const defaultValue = data[field.property]
+  return Array.isArray(defaultValue) ? defaultValue[0] : defaultValue
+}
+
 const MultipleField: React.FC<MultipleFieldProps> = ({ field, data, onChange }) => (
   <MultipleInputWrapper>
     {field.map((item: any) => (
       <FormInput
+        {...{ onChange, ...item }}
         key={item.property}
         name={item.property}
-        value={data[item.property]}
-        {...{ onChange, ...item }}
+        value={getValue(data, item)}
       />
-    ))}
+    )
+    )}
   </MultipleInputWrapper>
 )
 
@@ -41,11 +47,10 @@ const fieldMap = (field: any, data: any, onChange: (e: React.ChangeEvent<HTMLInp
 
   return (
     <FormInput
+      {...{ onChange, ...field[0] }}
       key={field[0].property}
-      {...field[0]}
       name={field[0].property}
-      value={data[field[0].property]}
-      {...{ onChange }}
+      value={getValue(data, field[0])}
     />
   )
 }
@@ -85,4 +90,4 @@ const Form: React.FC<Props> = ({ fields, data, cancel }) => {
   )
 }
 
-export default React.memo(Form,)
+export default Form

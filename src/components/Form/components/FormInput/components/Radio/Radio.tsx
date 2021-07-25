@@ -53,5 +53,4 @@ const Radio: React.FC<FormInputType> = ({ label = "", options, required, name, .
   )
 }
 
-
-export default Radio
+export default React.memo(Radio)

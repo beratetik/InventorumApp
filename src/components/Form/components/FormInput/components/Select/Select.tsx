@@ -6,7 +6,7 @@ import { palette } from '../../../../../../shared/config/styles'
 
 import { SelectContainer, SelectWrapper, Option } from './styles'
 
-const Select: React.FC<FormInputType> = ({ value, label = "", options, required, name, ...rest }) => {
+const Select: React.FC<FormInputType> = ({ label = "", options, value, name, ...rest }) => {
   if (!options) return null
 
   return (
@@ -16,12 +16,11 @@ const Select: React.FC<FormInputType> = ({ value, label = "", options, required,
         size={14}
         color={palette.gray2}
       />
-      <SelectWrapper {...{ name, ...rest }} id={name} defaultValue="default" >
-        <Option value="default" disabled >Select your option</Option>
-        {Object.entries(options).map(option => (
+      <SelectWrapper {...{ name, ...rest }} id={name} value={value || "default"}>
+        <Option value="default" disabled>Select your option</Option>
+        {Object.entries(options).map((option: string[]) => (
           <Option
             key={option[0]}
-            // selected={option[0] === value}
             value={option[0]}>
             {option[1]}
           </Option>
@@ -32,4 +31,4 @@ const Select: React.FC<FormInputType> = ({ value, label = "", options, required,
   )
 }
 
-export default Select
+export default React.memo(Select)

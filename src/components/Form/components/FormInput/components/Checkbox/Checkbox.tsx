@@ -40,4 +40,4 @@ const CheckBox: React.FC<FormInputType> = ({ label, value, options, onChange, ..
   )
 }
 
-export default CheckBox
+export default React.memo(CheckBox)

@@ -17,4 +17,4 @@ const InputNumber: React.FC<FormInputType> = ({ label = "", ...rest }) => (
   </InputNumberWrapper>
 )
 
-export default InputNumber
+export default React.memo(InputNumber)

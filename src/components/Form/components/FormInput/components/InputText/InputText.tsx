@@ -17,4 +17,4 @@ const InputText: React.FC<FormInputType> = ({ label = "", ...rest }) => (
   </InputTextWrapper>
 )
 
-export default InputText
+export default React.memo(InputText)
