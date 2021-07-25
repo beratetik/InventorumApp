@@ -1,3 +1,4 @@
+import React from 'react'
 import styled, { css } from 'styled-components'
 import { palette } from '../../shared/config/styles'
 
@@ -12,7 +13,7 @@ export const MultipleInputWrapper = styled.div`
   column-gap: 20px;
 `
 
-export const FormWrapper = styled.form`
+export const FormWrapper = styled.form<{ onSubmit: React.FormEventHandler }>`
   padding: 20px 30px;
   border-bottom: 1px solid ${palette.innerBorder};
 `

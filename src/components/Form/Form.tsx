@@ -74,17 +74,17 @@ const Form: React.FC<Props> = ({ fields, data, cancel }) => {
     cancel();
   }, [cancel])
 
-  const submitHandler = React.useCallback((e: React.MouseEvent) => {
+  const submitHandler = React.useCallback((e: React.FormEvent) => {
     e.preventDefault();
     updateUser(formData).then(() => cancel())
   }, [formData, cancel])
 
   return (
-    <FormWrapper>
+    <FormWrapper onSubmit={submitHandler}>
       {fields.map(field => fieldMap(field, formData, onChange))}
       <ButtonWrapper>
         <Button onClick={cancelHandler} >Cancel</Button>
-        <Button submit={true} onClick={submitHandler}>Save</Button>
+        <Button submit={true} type="submit">Save</Button>
       </ButtonWrapper>
     </FormWrapper>
   )
